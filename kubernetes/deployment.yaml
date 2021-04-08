@@ -6,7 +6,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 8081
   selector:
     app: gocontainer
 ---
@@ -28,4 +28,4 @@ spec:
       - name: website
         image: ajithreddydocker/webiteapp:mywebfreela
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
