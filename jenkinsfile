@@ -6,8 +6,7 @@ pipeline {
             steps {
                     sh "pwd"
                     sh "ls"
-                    sh "cd Website"
-                    sh "docker build -t anubaladocjerid/devopsmodelproject:latest ."
+                    sh "cd Website && docker build -t anubaladocjerid/devopsmodelproject:latest ."
                     sh "docker login -u='anubaladocjerid' -p='Apple@1234' "
                     sh "docker push anubaladocjerid/devopsmodelproject:latest"
             }
