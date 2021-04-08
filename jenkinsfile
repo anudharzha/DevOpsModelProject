@@ -1,12 +1,21 @@
+
 pipeline {
     agent { label 'master' }
     stages {
         stage('build') {
             steps {
-                echo "Hello World!"
-                sh "echo Hello from the shell"
-                sh "hostname"
+                echo "cd Website"
+
+            }
+        },
+        stage ('building'){
+            steps {
+                echo "ajith"
+                echo "hurray"
+
             }
         }
+        
+
     }
 }
