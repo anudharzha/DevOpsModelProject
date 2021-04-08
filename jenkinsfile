@@ -15,8 +15,8 @@ pipeline {
             steps {                   
                     sh "cd kubernetes && aws eks --region us-east-2 update-kubeconfig --name DevOpsModelProject"
                     sh "kubectl get po"
-                    sh "cd kubernetes && kubectl delete -f deployment.yaml"
                     sh "cd kubernetes && kubectl apply -f deployment.yaml"
+                    sh "kubectl rollout restart deployment website"
 
             }
         }
