@@ -2,16 +2,22 @@
 pipeline {
     agent { label 'master' }
     stages {
-        stage('build') {
+        stage('Building docker image') {
             steps {
-                echo "cd Website"
-
+                    sh "cd Website"
+                    sh "docker build -t anubaladocjerid/devopsmodelproject:latest ."
+                    sh "docker login -u='anubaladocjerid' -p='Apple@1234' "
+                    sh "docker push anubaladocjerid/devopsmodelproject:latest"
             }
         }
-        stage ('building'){
+        stage ('kubernetes deployment'){
             steps {
-                echo "ajith"
-                echo "hurray"
+                    sh "cd ../kubernetes"
+                    sh "aws eks --region us-east-2 update-kubeconfig --name DevOpsModelProject"
+                    sh "kubectl get po
+                    sh "kubectl get svc
+                    sh "kubectl delete -f deployment.yaml
+                    sh "kubectl apply -f deployment.yaml
 
             }
         }
