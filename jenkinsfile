@@ -12,9 +12,8 @@ pipeline {
             }
         }
         stage ('kubernetes depliyment'){
-            steps {
-                    sh "cd ../kubernetes"
-                    sh "aws eks --region us-east-2 update-kubeconfig --name DevOpsModelProject"
+            steps {                   
+                    sh "cd kubernetes && aws eks --region us-east-2 update-kubeconfig --name DevOpsModelProject"
                     sh "kubectl get po"
                     sh "kubectl get svc"
                     sh "kubectl delete -f deployment.yaml"
