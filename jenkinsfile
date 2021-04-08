@@ -10,14 +10,14 @@ pipeline {
                     sh "docker push anubaladocjerid/devopsmodelproject:latest"
             }
         }
-        stage ('kubernetes deployment'){
+        stage ('kubernetes depliyment'){
             steps {
                     sh "cd ../kubernetes"
                     sh "aws eks --region us-east-2 update-kubeconfig --name DevOpsModelProject"
-                    sh "kubectl get po
-                    sh "kubectl get svc
-                    sh "kubectl delete -f deployment.yaml
-                    sh "kubectl apply -f deployment.yaml
+                    sh "kubectl get po"
+                    sh "kubectl get svc"
+                    sh "kubectl delete -f deployment.yaml"
+                    sh "kubectl apply -f deployment.yaml"
 
             }
         }
