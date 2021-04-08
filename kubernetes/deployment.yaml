@@ -30,7 +30,7 @@ spec:
            claimName: pvc
       containers:
       - name: website
-        image: ajithreddydocker/webiteapp:mywebfreela
+        image: anubaladocjerid/devopsmodelproject:latest
         ports:
         - containerPort: 8081
 ---
