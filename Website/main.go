@@ -9,5 +9,5 @@ func main() {
 
 	http.Handle("/", http.FileServer(http.Dir("./mywebsite")))
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8081", nil))
 }
