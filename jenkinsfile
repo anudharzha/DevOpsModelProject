@@ -5,6 +5,7 @@ pipeline {
         stage('Building docker image') {
             steps {
                     sh "pwd"
+                    sh "ls"
                     sh "cd Website"
                     sh "docker build -t anubaladocjerid/devopsmodelproject:latest ."
                     sh "docker login -u='anubaladocjerid' -p='Apple@1234' "
