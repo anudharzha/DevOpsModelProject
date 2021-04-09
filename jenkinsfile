@@ -11,7 +11,7 @@ pipeline {
                     sh "docker push anubaladocjerid/devopsmodelproject:latest"
             }
         }
-        stage ('kubernetes depliyment'){
+        stage ('Kubernetes Deployment'){
             steps {                   
                     sh "cd kubernetes && aws eks --region us-east-2 update-kubeconfig --name DevOpsModelProject"
                     sh "kubectl get po"
@@ -20,7 +20,7 @@ pipeline {
 
             }
         }
-        stage ('show service endpoint'){
+        stage ('Show service endpoint'){
             steps {                   
                     sh "cd kubernetes && aws eks --region us-east-2 update-kubeconfig --name DevOpsModelProject"
                     sh "kubectl get svc"
